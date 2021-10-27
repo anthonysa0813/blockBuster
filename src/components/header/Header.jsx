@@ -1,11 +1,12 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import "./header.css";
 import logo from "../../assets/images/logo-blockBuster.png";
 import { MovieContext } from "../../hooks/movieContext";
 
 const Header = () => {
   const context = useContext(MovieContext);
-  const { movieSearch, setMovieSearch, setMovieFind, movieFind } = context;
+  const { movieSearch, setMovieSearch, setMovieFind } = context;
+  const [error, setError] = useState(null);
 
   const handleChange = (e) => {
     setMovieSearch(e.target.value);
@@ -23,12 +24,21 @@ const Header = () => {
     if (movieSearch) {
       getMovies(movieSearch);
     }
+    if (movieSearch.trim() === "") {
+      setError(true);
+      setTimeout(() => {
+        setError(null);
+      }, 3000);
+      return;
+    }
+
+    setError(null);
   };
 
   return (
     <header className="">
       <div className="wrapper">
-        <div className="header-container ">
+        <div className="header-container  ">
           <div className="logo">
             <img src={logo} alt="Logo de blockmaster" />
           </div>
@@ -40,6 +50,9 @@ const Header = () => {
             </ul>
           </nav>
           <form className="searchMovie" onSubmit={handleSubmit}>
+            {error && (
+              <span className="alert">Debes de introducir una busqueda</span>
+            )}
             <input
               type="text"
               onChange={handleChange}

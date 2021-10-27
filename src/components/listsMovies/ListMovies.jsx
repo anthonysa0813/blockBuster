@@ -6,14 +6,14 @@ import PosterMovie from "../poster/PosterMovie";
 import "./listMovie.css";
 
 const ListMovies = () => {
-  const { movieSearch, movieFind } = useContext(MovieContext);
+  const { movieFind } = useContext(MovieContext);
 
   const [movies, setMovies] = useState([]);
   const API_MOVIE = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=8de0f604ebee904c52ef16be52e8ccee`;
 
   useEffect(() => {
     obtenerData(API_MOVIE);
-  }, [movieFind]);
+  }, [movieFind, API_MOVIE]);
 
   const obtenerData = async (url) => {
     const response = await fetch(url);
