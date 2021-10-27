@@ -1,0 +1,14 @@
+.lists-container {
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+
+/* .cards-container img {
+  width: 100%;
+  object-fit: cover;
+} */
+
+.posters-container {
+}

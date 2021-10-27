@@ -1,0 +1,53 @@
+header {
+  color: var(--white);
+  padding-block: 1rem;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.searchMovie {
+  flex-basis: 500px;
+  display: flex;
+  align-items: center;
+}
+
+.nav .menu {
+  display: flex;
+  gap: 3rem;
+}
+
+.nav .menu li {
+  list-style-type: none;
+}
+
+.nav .menu li:first-of-type {
+  color: var(--primary);
+  border-bottom: 1px solid var(--primary);
+  padding-block-end: 0.25rem;
+}
+.search {
+  border: none;
+  width: 20%;
+  height: 2rem;
+  padding: 0.5rem 0.75rem;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  background-color: var(--primary);
+}
+
+.logoSearch {
+  width: 20px;
+  height: 20px;
+}
+
+.header-container input[type="text"] {
+  width: 50%;
+  padding: 0.5rem 0.75rem;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  border: none;
+  outline-color: var(--primary);
+}

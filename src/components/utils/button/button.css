@@ -1,0 +1,19 @@
+.button-hero {
+  width: 150px;
+  padding: 0.75rem 1rem;
+  background-color: var(--primary);
+  color: var(--black);
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.button-hero:active {
+  transform: scale(1.1);
+}
+
+.button-hero span {
+  font-weight: 900;
+  /* font-weight: bolder; */
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+}
